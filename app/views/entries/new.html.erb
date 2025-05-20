@@ -1,0 +1,23 @@
+<h1>New Entry for <%= @place.name %></h1>
+
+<%= form_tag "/places/#{@place.id}/entries" do %>
+
+<div>
+<label>Title:</label><br>
+<%= text_field_tag "entry[title]"%>
+</div>
+
+<div>
+<label>Desciption:</label><br>
+<%= text_area_tag "entry[description]" %>
+</div>
+
+<div>
+<label>Date:</label><br>
+<%= date_field_tag "entry[posted_on]" %>
+</div>
+<%= submit_tag "Save Entry" %>
+<% end %>
+
+<br>
+<%= link_to "Back to #{@place.name}", "/places/{@place.id}" %>
